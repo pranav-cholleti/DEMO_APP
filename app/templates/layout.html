@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasavi College of Engineering (Mock)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <!-- UI ISSUE: Logo is misaligned due to negative margin -->
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="VCE Logo" class="logo-img">
+            </div>
+            <div class="college-title">
+                <h1>VASAVI COLLEGE OF ENGINEERING</h1>
+                <p>(Autonomous)</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/departments">Departments</a></li>
+                <li><a href="/placements">Placements</a></li>
+                <li><a href="/search">Student Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- UI ISSUE: Invisible blocker for the Apply Now button -->
+    <div class="apply-now-blocker"></div>
+    <button class="apply-now-btn">Apply Now</button>
+
+    <footer class="footer">
+        <p>&copy; 2024 Vasavi College of Engineering Clone. Educational Purpose Only.</p>
+    </footer>
+
+    <!-- IssueRes Visual Reporter Integration -->
+    <script type="module">
+        import { initReporter } from "{{ url_for('static', filename='js/issueres-reporter.js') }}";
+        
+        initReporter({
+            repo: { 
+                owner: 'pranav-cholleti', 
+                name: 'calculator' 
+            },
+            apiEndpoint: 'http://localhost:4000/api/report',
+            fabPosition: 'bottom-right'
+        });
+    </script>
+</body>
+</html>

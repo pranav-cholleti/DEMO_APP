@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="search-page">
+    <h2>Student Database Search</h2>
+    <form action="/search" method="GET" class="search-form">
+        <input type="text" name="q" placeholder="Enter student name..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="results">
+        {% if results %}
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Dept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in results %}
+                    <tr>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.roll_no }}</td>
+                        <td>{{ student.dept }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% elif query %}
+            <p>No students found matching "{{ query }}".</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

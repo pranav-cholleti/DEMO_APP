@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="departments-page">
+    <h2>Academic Departments</h2>
+    <div class="dept-list">
+        {% for dept in depts %}
+        <div class="dept-card">
+            <h3>{{ dept.name }} ({{ dept.code }})</h3>
+            <p>Providing world-class education in engineering and technology.</p>
+            <a href="#">Learn More</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

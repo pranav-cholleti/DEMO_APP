@@ -1,0 +1,177 @@
+:root {
+    --maroon: #800000;
+    --gold: #FFD700;
+    --dark-gray: #333;
+    --light-gray: #f4f4f4;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--dark-gray);
+}
+
+.header {
+    background-color: var(--white);
+    border-bottom: 3px solid var(--maroon);
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+/* UI ISSUE 1: Logo misaligned/cut off */
+.logo-img {
+    height: 100px;
+    margin-top: -50px; /* Intentional misalignment */
+}
+
+.college-title h1 {
+    color: #003366;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.college-title p {
+    color: var(--maroon);
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #e9ecef;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    color: var(--maroon);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.banner {
+    background: linear-gradient(rgba(128,0,0,0.7), rgba(128,0,0,0.7)), url('https://vce.ac.in/img/vce_banner.jpg');
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.news-ticker {
+    background: #333;
+    color: var(--gold);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dept-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dept-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--light-gray);
+}
+
+.dept-card h3 {
+    color: var(--maroon);
+    margin-top: 0;
+}
+
+.search-form {
+    margin-bottom: 30px;
+}
+
+.search-form input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background: var(--maroon);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: var(--maroon);
+    color: white;
+}
+
+/* UI ISSUE 2: Blocker for Apply Now button */
+.apply-now-blocker {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 50px;
+    z-index: 9999;
+    background: transparent; /* Invisible but blocks clicks */
+}
+
+.apply-now-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    background: var(--maroon);
+    color: var(--gold);
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    margin-top: 50px;
+}
