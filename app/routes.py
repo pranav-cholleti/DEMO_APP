@@ -30,9 +30,9 @@ def search():
     """
     query = request.args.get('q', '')
     if query:
-        # Dangerous raw SQL concatenation
-        sql = f"SELECT * FROM student WHERE name LIKE '%{query}%'"
-        results = db.session.execute(text(sql)).fetchall()
+        # Use parameterized query to prevent SQL injection
+        sql = text("SELECT * FROM student WHERE name LIKE :search_term")
+        results = db.session.execute(sql, {'search_term': f'%{query}%'}).fetchall()
         return render_template('search.html', results=results, query=query)
     return render_template('search.html', results=[], query='')
 
